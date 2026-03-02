@@ -1,0 +1,93 @@
+body {
+    background-color: #e0f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-board-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #006064;
+    margin-top: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+    grid-template-rows: repeat(10, 60px);
+    border: 5px solid #00acc1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    /* Grid order correction for board layout */
+    direction: rtl; 
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b2ebf2;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.square .number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+
+.square .label {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/* Square alternating colors */
+.square.red {
+    background-color: #ffcccc;
+}
+
+.square.white {
+    background-color: #ffffff;
+}
+
+/* Specific styling for start/finish labels */
+#s1 .label {
+    color: green;
+    font-weight: bold;
+}
+
+#s100 .label {
+    color: darkred;
+    font-weight: bold;
+}
+
+/* Static Snake and Ladder styling (images needed for images) */
+.snake {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.ladder {
+    position: absolute;
+    width: 20px;
+    background-image: linear-gradient(to right, #8b4513 3px, transparent 3px),
+                      linear-gradient(to right, transparent 17px, #8b4513 17px),
+                      repeating-linear-gradient(to bottom, #8b4513, #8b4513 4px, transparent 4px, transparent 15px);
+    opacity: 0.7;
+    pointer-events: none;
+}
